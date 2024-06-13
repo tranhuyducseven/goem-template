@@ -73,6 +73,7 @@ func setupMiddleware(e *echo.Echo) {
 		AllowMethods:     []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
 	}))
 	e.Use(openobserve.Middleware())
+	e.Use(utils.RequestLogMiddleware())
 }
 
 func setupErrorHandler(e *echo.Echo) {

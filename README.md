@@ -72,6 +72,14 @@ Structure of the project:
 
 ## Usage
 - Run bootstrapping: `make compose` to start the services
+    1. This will start the Openobserve service that runs on port 5080
+        - You can access the Openobserve dashboard at `http://localhost:5080`
+        - Login with the default email and password in `compose.yml`, or update the values
+        - Access the [Ingestion API - Trace](http://localhost:5080/web/ingestion/custom/traces/opentelemetry) 
+        - Copy the `Authorization` header value and update the `OPENOBSERVE_CREDENTIAL` in the `.env` file
+        - Access the [Trace Tab](http://localhost:5080/web/traces) to view the traces
+    2. This will start the MongoDB service that runs on port 27017
+        - Access the MongoDB connection string and update the `MONGO_URI` in the `.env` file
 - Run the application: `make run`
 - Run the application with hot reload: `make watch`
 - Run application with Docker: `make start`
